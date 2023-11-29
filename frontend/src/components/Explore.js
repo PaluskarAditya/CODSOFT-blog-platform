@@ -6,7 +6,7 @@ export default function Explore() {
 
   useEffect(() => {
     const getAll = async () => {
-      const res = await fetch('http://localhost:8080/api/blogs');
+      const res = await fetch('https://blogplatformbackend.onrender.com/api/blogs');
       const data = await res.json();
       setBlogs(data);
     }
@@ -14,12 +14,12 @@ export default function Explore() {
   }, [])
 
   return (
-    <div className='grid grid-cols-3 p-5 gap-5'>
+    <div className='grid md:grid-cols-3 sm:grid-cols-2 resp-explore p-5 gap-5'>
       {
         blogs ? blogs.map(el => <Link to={`/explore/${el._id}`} key={el._id}>
           <div className='border border-gray-200 shadow-md shadow-gray-100 rounded-md overflow-hidden'>
             <div className='overflow-hidden bg-gray-200 rounded-t-md flex-[2]'>
-              <img src={el.img1} className='hover:scale-105 z-0 rounded-t-md h-[15vw] w-full object-cover transition' loading='lazy' />
+              <img src={el.img1} className='hover:scale-105 resp-img z-0 rounded-t-md h-[15vw] w-full object-cover transition' loading='lazy' />
             </div>
             <div className='flex-1 flex flex-col p-2 justify-center items-start h-[18vh]'>
               <p className='text-md tracking-tighter'>{el.title}</p>

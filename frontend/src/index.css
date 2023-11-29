@@ -8,3 +8,43 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+
+.resp-nav {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  #hero {
+    flex-direction: column;
+  }
+
+  .resp-nav {
+    display: flex;
+  }
+
+  .resp-img {
+    height: 50vw;
+  }
+
+  .resp-explore {
+    grid-template-columns: 1fr;
+  }
+
+  .resp-auth {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .resp-text {
+    text-align: left;
+  }
+
+  .norm-nav {
+    display: none;
+  }
+
+  .reso-nav-wrapper {
+    align-items: start;
+    flex-direction: column;
+  }
+}

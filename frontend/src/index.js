@@ -8,18 +8,26 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Explore from './components/Explore';
 import BlogPost from './components/BlogPost';
 import Auth from './components/Auth';
+import { Provider } from 'react-redux';
+import store from './features/store';
+import CreateBlog from './components/CreateBlog';
+import Profile from './components/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <Provider store={store}>
       <Navbar />
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/explore' element={<Explore />} />
         <Route path='/explore/:id' element={<BlogPost />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/create-blog' element={<CreateBlog />} />
+        <Route path='/profile/:id' element={<Profile />} />
       </Routes>
+      </Provider>
     </Router>
   </React.StrictMode>
 );
